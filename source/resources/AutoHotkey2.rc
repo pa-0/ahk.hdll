@@ -1,0 +1,368 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#include <windows.h>
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "..\targetver.h"
+#endif
+//#include "winres.h"
+//#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+// The following #ifdef is disabled because manifest generation is disabled
+// in project properties.  VC++ 2010 changes the manifest in a way that causes
+// XP SP2 systems to blue-screen.  Update: See AutoHotkey.exe.manifest for comments.
+//#ifdef EMBED_MANIFEST // VC++ 2005 and later don't require the next line.
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST  "AutoHotkey.exe.manifest"
+//#endif
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "//#include ""afxres.h""\r\n"
+    "#include <winresrc.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Reload Script\tCtrl+R",      ID_FILE_RELOADSCRIPT
+        MENUITEM "&Edit Script\tCtrl+E",        ID_FILE_EDITSCRIPT
+        MENUITEM "&Window Spy",                 ID_FILE_WINDOWSPY
+        MENUITEM SEPARATOR
+        MENUITEM "&Pause Script\tPause",        ID_FILE_PAUSE
+        MENUITEM "&Suspend Hotkeys",            ID_FILE_SUSPEND
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit (Terminate Script)",    ID_FILE_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Lines most recently executed\tCtrl+L", ID_VIEW_LINES
+        MENUITEM "&Variables and their contents\tCtrl+V", ID_VIEW_VARIABLES
+        MENUITEM "&Hotkeys and their methods\tCtrl+H", ID_VIEW_HOTKEYS
+        MENUITEM "&Key history and script info\tCtrl+K", ID_VIEW_KEYHISTORY
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_VIEW_REFRESH
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&User Manual\tF1",            ID_HELP_USERMANUAL
+        MENUITEM "&Web Site",                   ID_HELP_WEBSITE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "icon_main.ico"
+IDI_SUSPEND             ICON                    "icon_suspend.ico"
+IDI_PAUSE               ICON                    "icon_pause.ico"
+IDI_PAUSE_SUSPEND       ICON                    "icon_pause_suspend.ico"
+IDI_FILETYPE            ICON                    "icon_filetype.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INPUTBOX DIALOGEX 0, 0, 210, 83
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 10, "Segoe UI", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_INPUTEDIT,2,51,207,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,51,67,50,12
+    PUSHBUTTON      "Cancel",IDCANCEL,129,67,50,12
+    LTEXT           "Prompt",IDC_INPUTPROMPT,3,2,205,48
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS
+BEGIN
+VK_F1, ID_HELP_USERMANUAL, VIRTKEY, NOINVERT
+"H", ID_VIEW_HOTKEYS, VIRTKEY, CONTROL, NOINVERT
+"K", ID_VIEW_KEYHISTORY, VIRTKEY, CONTROL, NOINVERT
+"L", ID_VIEW_LINES, VIRTKEY, CONTROL, NOINVERT
+VK_F5, ID_VIEW_REFRESH, VIRTKEY, NOINVERT
+"V", ID_VIEW_VARIABLES, VIRTKEY, CONTROL, NOINVERT
+VK_PAUSE, ID_FILE_PAUSE, VIRTKEY, NOINVERT
+"E", ID_FILE_EDITSCRIPT, VIRTKEY, CONTROL, NOINVERT
+"R", ID_FILE_RELOADSCRIPT, VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "..\ahkversion.h"
+
+#ifdef UNICODE
+#define AHK_ENC "Unicode"
+#else
+#define AHK_ENC "ANSI"
+#endif
+#ifdef _WIN64
+#define AHK_BIT "64-bit"
+#else
+#define AHK_BIT "32-bit"
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION AHK_VERSION_N
+PRODUCTVERSION AHK_VERSION_N
+FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+FILEFLAGS 0x1L
+#else
+FILEFLAGS 0x0L
+#endif
+FILEOS 0x4L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+BLOCK "StringFileInfo"
+BEGIN
+BLOCK "040904b0"
+BEGIN
+VALUE "FileDescription", "AutoHotkey_H " AHK_ENC " " AHK_BIT
+VALUE "FileVersion", AHK_VERSION
+VALUE "InternalName", "AutoHotkey_H"
+VALUE "LegalCopyright", "Copyright (C) 2003-2021"
+#ifdef USRDLL
+VALUE "OriginalFilename", "AutoHotkey.dll"
+#else
+VALUE "OriginalFilename", "AutoHotkey.exe"
+#endif
+VALUE "ProductName", "AutoHotkey_H"
+VALUE "ProductVersion", AHK_VERSION
+VALUE "OLESelfRegister", ""
+END
+END
+BLOCK "VarFileInfo"
+BEGIN
+VALUE "Translation", 0x409, 1200
+END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+
+#endif    // English (U.S.) resources
+
+#ifndef _USRDLL
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+IDR_AUTOHOTKEY2         REGISTRY                "AutoHotkey2.rgs"
+
+IDR_COMSERVER           REGISTRY                "COMServer.rgs"
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "AutoHotkey2.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+#endif
+
+C974C3B7677A402D93B047DA402587C7	RCDATA	"WINAPI.zip"
+//E4847ED08866458F8DD35F94B37001C0    RCDATA  "F:\\Temp\\RCData_1.bin"
+
+/*
+#ifdef _DEBUG
+// AHK RCDATA "..\\..\\Test\\Test.ahk"
+556EA2A65AE54D58BC52C792B3ED2ED0 RCDATA "F:\\AHK\\v2\\RCData_1.bin" // SevenZip
+E4847ED08866458F8DD35F94B37001C0    RCDATA  "F:\\AHK\\v2\\RCData_3.bin" // Script.ahk
+
+ADDSCRIPT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_1.bin"
+
+AHKEXEC.AHK LIB "F:\\AHK\\v2\\Lib\\Data_2.bin"
+
+AHKEXECUTELINE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_3.bin"
+
+AHKLABEL.AHK LIB "F:\\AHK\\v2\\Lib\\Data_4.bin"
+
+BCRYPT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_5.bin"
+
+BETWEEN.AHK LIB "F:\\AHK\\v2\\Lib\\Data_6.bin"
+
+BINRUN.AHK LIB "F:\\AHK\\v2\\Lib\\Data_7.bin"
+
+BINTOHEX.AHK LIB "F:\\AHK\\v2\\Lib\\Data_8.bin"
+
+CENTERWINDOW.AHK LIB "F:\\AHK\\v2\\Lib\\Data_9.bin"
+
+CREATESCRIPT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_10.bin"
+
+CRITICALSECTION.AHK LIB "F:\\AHK\\v2\\Lib\\Data_11.bin"
+
+DIRGETPARENT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_12.bin"
+
+DYNARUN.AHK LIB "F:\\AHK\\v2\\Lib\\Data_13.bin"
+
+ENVUPDATE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_14.bin"
+
+ERRORMESSAGE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_15.bin"
+
+EXTRACTICONFROMEXECUTABLE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_16.bin"
+
+FILEREPLACE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_17.bin"
+
+FINDFUNC.AHK LIB "F:\\AHK\\v2\\Lib\\Data_18.bin"
+
+FINDLABEL.AHK LIB "F:\\AHK\\v2\\Lib\\Data_19.bin"
+
+FONTEXIST.AHK LIB "F:\\AHK\\v2\\Lib\\Data_20.bin"
+
+GETENV.AHK LIB "F:\\AHK\\v2\\Lib\\Data_21.bin"
+
+GETPROCESSPARAMETER.AHK LIB "F:\\AHK\\v2\\Lib\\Data_22.bin"
+
+HEXTOBIN.AHK LIB "F:\\AHK\\v2\\Lib\\Data_23.bin"
+
+HIBYTE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_24.bin"
+
+HIWORD.AHK LIB "F:\\AHK\\v2\\Lib\\Data_25.bin"
+
+ISBOM.AHK LIB "F:\\AHK\\v2\\Lib\\Data_26.bin"
+
+ISFILEINUSE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_27.bin"
+
+LOBYTE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_28.bin"
+
+LOWORD.AHK LIB "F:\\AHK\\v2\\Lib\\Data_29.bin"
+
+MAKELANGID.AHK LIB "F:\\AHK\\v2\\Lib\\Data_30.bin"
+
+MAKELCID.AHK LIB "F:\\AHK\\v2\\Lib\\Data_31.bin"
+
+MAKELONG.AHK LIB "F:\\AHK\\v2\\Lib\\Data_32.bin"
+
+MAKELPARAM.AHK LIB "F:\\AHK\\v2\\Lib\\Data_33.bin"
+
+MAKELRESULT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_34.bin"
+
+MAKEWORD.AHK LIB "F:\\AHK\\v2\\Lib\\Data_35.bin"
+
+MAKEWPARAM.AHK LIB "F:\\AHK\\v2\\Lib\\Data_36.bin"
+
+MCODEH.AHK LIB "F:\\AHK\\v2\\Lib\\Data_37.bin"
+
+NEWTHREAD.AHK LIB "F:\\AHK\\v2\\Lib\\Data_38.bin"
+
+OBJBYREF.AHK LIB "F:\\AHK\\v2\\Lib\\Data_39.bin"
+
+OBJSHARE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_40.bin"
+
+PROGRESS.AHK LIB "F:\\AHK\\v2\\Lib\\Data_41.bin"
+
+RESDELETE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_42.bin"
+
+RESDLLCREATE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_43.bin"
+
+RESEXIST.AHK LIB "F:\\AHK\\v2\\Lib\\Data_44.bin"
+
+RESGET.AHK LIB "F:\\AHK\\v2\\Lib\\Data_45.bin"
+
+RESOURCEINDEXTOID.AHK LIB "F:\\AHK\\v2\\Lib\\Data_46.bin"
+
+RESPUT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_47.bin"
+
+RESPUTFILE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_48.bin"
+
+SEVENZIP.AHK LIB "F:\\AHK\\v2\\Lib\\Data_49.bin"
+
+SPLASHIMAGE.AHK LIB "F:\\AHK\\v2\\Lib\\Data_50.bin"
+
+SPLASHTEXTOFF.AHK LIB "F:\\AHK\\v2\\Lib\\Data_51.bin"
+
+SPLASHTEXTON.AHK LIB "F:\\AHK\\v2\\Lib\\Data_52.bin"
+
+SQLITE3.AHK LIB "F:\\AHK\\v2\\Lib\\Data_53.bin"
+
+STRBUF.AHK LIB "F:\\AHK\\v2\\Lib\\Data_54.bin"
+
+THREADOBJ.AHK LIB "F:\\AHK\\v2\\Lib\\Data_55.bin"
+
+TOCHAR.AHK LIB "F:\\AHK\\v2\\Lib\\Data_56.bin"
+
+TOINT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_57.bin"
+
+TOSHORT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_58.bin"
+
+TOUCHAR.AHK LIB "F:\\AHK\\v2\\Lib\\Data_59.bin"
+
+TOUINT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_60.bin"
+
+TOUSHORT.AHK LIB "F:\\AHK\\v2\\Lib\\Data_61.bin"
+
+URLDOWNLOADTOVAR.AHK LIB "F:\\AHK\\v2\\Lib\\Data_62.bin"
+
+WINGETPIDLIST.AHK LIB "F:\\AHK\\v2\\Lib\\Data_63.bin"
+
+#endif
+*/

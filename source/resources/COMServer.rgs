@@ -1,0 +1,20 @@
+HKCR
+{
+	ForceRemove AutoHotkey2.Application = s 'AutoHotkey2 Application'
+    {
+        CLSID = s '{1EB0A161-FE26-4C22-A15D-1B6C6F2677B9}'
+    }
+	NoRemove CLSID
+	{
+		ForceRemove {1EB0A161-FE26-4C22-A15D-1B6C6F2677B9} = s 'AutoHotkey2 Application'
+		{
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{69E031FA-BB62-4F00-985F-400DE4A373C0}'
+			Version = s '1.0'
+		}
+	}
+}
